@@ -1,0 +1,226 @@
+(() => {
+  'use strict';
+  const root = document.querySelector('[data-tc-prototype]');
+  if (!root || root.dataset.prototypeReady) return;
+  root.dataset.prototypeReady = 'true';
+
+  const action = (label, box, to, primary = false) => ({ label, box, to, primary });
+  const stories = {
+    booking: {
+      label: 'Booking & management',
+      steps: [
+        {
+          step: 'Task hub',
+          src: '/assets/tutor-07-clean.png',
+          alt: 'Calendar home screen with Book a Tutor, Quick Help, and Manage Bookings actions.',
+          title: 'One home for the whole task.',
+          description: 'The calendar becomes the stable starting point. “Book a Tutor” carries the visual priority, while Quick Help and Manage Bookings remain available without competing with the main task.',
+          hint: 'The hierarchy makes the next action obvious without hiding secondary needs.',
+          actions: [action('Open availability key', [80,57,11,7], 1, true)]
+        },
+        {
+          step: 'Explain states',
+          src: '/assets/tutor-calendar-legend.png',
+          alt: 'Calendar home screen with the availability key opened beside the question-mark control.',
+          title: 'Explain the calendar without interrupting the task.',
+          description: 'The question-mark control opens an availability key directly on the calendar. It clarifies unavailable dates and existing sessions without sending the student elsewhere or adding permanent visual clutter.',
+          hint: 'Help appears only when needed and stays attached to the interface it explains.',
+          actions: [action('Book a Tutor', [10,64,80,8], 2, true)]
+        },
+        {
+          step: 'Set context',
+          src: '/assets/tutor-11.png',
+          alt: 'Selected Kingston campus, Mathematics subject, and in-person delivery method.',
+          title: 'Define the request before showing availability.',
+          description: 'Campus, subject, and delivery method establish the practical constraints first. The chosen values stay visible together, so the student can verify the request before moving forward.',
+          hint: 'Progressive disclosure prevents irrelevant dates and times from appearing too early.',
+          actions: [action('Continue', [9,63,82,7], 3, true)]
+        },
+        {
+          step: 'Read availability',
+          src: '/assets/tutor-calendar-date.png',
+          alt: 'Expanded November calendar with available, unavailable, and booked date states.',
+          title: 'Make availability legible at a glance.',
+          description: 'The calendar keeps every date in context instead of sending the student to a separate view. Red identifies the actionable date, grey signals unavailable options, and crossed states explain existing constraints.',
+          hint: 'Each visual state answers “Can I choose this?” before the student clicks.',
+          actions: [action('Choose November 15', [79,56,13,6], 4, true)]
+        },
+        {
+          step: 'Confirm selection',
+          src: '/assets/tutor-15.png',
+          alt: 'Available tutoring times with 10:00 AM selected in red.',
+          title: 'Turn a tap into an unmistakable selection.',
+          description: 'The chosen time changes to red while the alternatives remain visible. This immediate state change gives the student a clear checkpoint before committing to the next step.',
+          hint: 'A visible selected state removes ambiguity and reduces accidental bookings.',
+          actions: [action('Continue', [9,73,82,6], 5, true)]
+        },
+        {
+          step: 'Review',
+          src: '/assets/tutor-16.png',
+          alt: 'Booking review screen showing the complete tutoring request.',
+          title: 'Put every consequence on one screen.',
+          description: 'Campus, subject, delivery method, date, and time are repeated in one compact summary. Targeted Change links return to the relevant decision without forcing the student to restart the flow.',
+          hint: 'The review screen supports correction before the booking is submitted.',
+          actions: [action('Continue', [9,64,82,7], 6, true)]
+        },
+        {
+          step: 'Confirmation',
+          src: '/assets/tutor-17.png',
+          alt: 'Successful booking confirmation with Finish, Book More, and Manage Bookings actions.',
+          title: 'Close the loop — then offer the next useful action.',
+          description: 'The success state confirms what was booked instead of relying on a generic message. Finish, Book More, and Manage Bookings match the three most likely intentions after completion.',
+          hint: 'Confirmation is treated as part of the experience, not the end of the interface.',
+          actions: [action('Manage Bookings', [9,69,82,7], 7, true)]
+        },
+        {
+          step: 'Manage',
+          src: '/assets/tutor-20.png',
+          alt: 'Manage Bookings screen with upcoming tutoring sessions and appointment actions.',
+          title: 'Management belongs to the same system.',
+          description: 'Upcoming sessions show tutor, subject, status, time, location, and campus before exposing Info, Reschedule, and Cancel. The card structure turns a list of appointments into clear, actionable records.',
+          hint: 'The flow continues beyond booking so students can recover from changing plans.',
+          actions: []
+        }
+      ]
+    },
+    support: {
+      label: 'Access & support',
+      steps: [
+        {
+          step: 'Entry point',
+          src: '/assets/tutor-access-login.png',
+          alt: 'Book Tutors entry screen with sign-in fields and Quick Help.',
+          title: 'Make help available before authentication.',
+          description: 'Quick Help sits beside the entry path rather than behind it. A student who cannot sign in can still reach support, while the restrained screen keeps the primary access task clear.',
+          hint: 'Support is reachable at the exact moment an access problem can occur.',
+          actions: [action('Quick Help', [13,66,74,6], 1, true)]
+        },
+        {
+          step: 'Route the need',
+          src: '/assets/tutor-access-quick-menu.png',
+          alt: 'Quick Help panel with Contact Support, Live Chat, and FAQ options.',
+          title: 'Route support by urgency and effort.',
+          description: 'Contact Support, Live Chat, and FAQ separate technical assistance, immediate conversation, and self-service. Each option explains what will happen before the student chooses it.',
+          hint: 'The labels describe outcomes, not internal department names.',
+          actions: [action('Live Chat', [21,49,58,7], 2, true)]
+        },
+        {
+          step: 'Stay in context',
+          src: '/assets/tutor-access-live-chat.png',
+          alt: 'Live Chat conversation within the tutor booking experience.',
+          title: 'Resolve the problem without abandoning the task.',
+          description: 'The conversation stays inside the booking experience, preserves the student’s context, and makes support availability visible. The student can return to the previous support choices at any point.',
+          hint: 'Assistance feels like part of the product rather than a separate destination.',
+          actions: []
+        }
+      ]
+    }
+  };
+
+  const image = root.querySelector('[data-tc-prototype-image]');
+  const title = root.querySelector('[data-tc-prototype-title]');
+  const description = root.querySelector('[data-tc-prototype-description]');
+  const hint = root.querySelector('[data-tc-prototype-hint]');
+  const actionLayer = root.querySelector('[data-tc-prototype-actions]');
+  const previous = root.querySelector('[data-tc-prototype-back]');
+  const next = root.querySelector('[data-tc-prototype-next]');
+  const status = root.querySelector('[data-tc-prototype-status]');
+  const stepList = root.querySelector('[data-tc-prototype-steps]');
+  const modeButtons = [...root.querySelectorAll('[data-tc-prototype-mode]')];
+  let storyKey = 'booking';
+  let steps = stories.booking.steps;
+  let stepButtons = [];
+  let current = 0;
+  let timer;
+
+  Object.values(stories).forEach(story => story.steps.forEach(screen => {
+    const preload = new Image();
+    preload.src = screen.src + '?v=68';
+  }));
+
+  function setBox(element, box) {
+    const [x,y,width,height] = box;
+    element.style.setProperty('--tc-hotspot-x', x + '%');
+    element.style.setProperty('--tc-hotspot-y', y + '%');
+    element.style.setProperty('--tc-hotspot-w', width + '%');
+    element.style.setProperty('--tc-hotspot-h', height + '%');
+  }
+
+  function renderStoryNavigation() {
+    stepList.replaceChildren();
+    steps.forEach((screen,index) => {
+      const item = document.createElement('li');
+      const button = document.createElement('button');
+      const number = document.createElement('span');
+      button.type = 'button';
+      number.textContent = String(index + 1).padStart(2,'0');
+      button.append(number, document.createTextNode(screen.step));
+      button.addEventListener('click', () => show(index));
+      item.append(button);
+      stepList.append(item);
+    });
+    stepButtons = [...stepList.querySelectorAll('button')];
+    stepList.setAttribute('aria-label', stories[storyKey].label + ' story');
+  }
+
+  function renderActions(screen) {
+    actionLayer.replaceChildren();
+    screen.actions.forEach(item => {
+      const button = document.createElement('button');
+      const label = document.createElement('span');
+      button.type = 'button';
+      button.className = 'tc-prototype-hotspot is-primary';
+      button.setAttribute('aria-label', item.label + ' — continue the story');
+      setBox(button,item.box);
+      label.textContent = item.label;
+      button.append(label);
+      button.addEventListener('click', () => show(item.to));
+      actionLayer.append(button);
+    });
+  }
+
+  function apply(index) {
+    const screen = steps[index];
+    current = index;
+    image.src = screen.src + '?v=68';
+    image.alt = screen.alt;
+    title.textContent = screen.title;
+    description.textContent = screen.description;
+    hint.textContent = screen.hint;
+    status.textContent = String(index + 1).padStart(2,'0') + ' / ' + String(steps.length).padStart(2,'0');
+    previous.disabled = index === 0;
+    next.disabled = index === steps.length - 1;
+    next.textContent = index === steps.length - 1 ? 'Story complete' : 'Next decision';
+    stepButtons.forEach((button,position) => {
+      if (position === index) button.setAttribute('aria-current','step');
+      else button.removeAttribute('aria-current');
+    });
+    renderActions(screen);
+  }
+
+  function show(index) {
+    const target = Math.max(0,Math.min(index,steps.length - 1));
+    clearTimeout(timer);
+    actionLayer.replaceChildren();
+    image.classList.add('is-changing');
+    timer = setTimeout(() => {
+      apply(target);
+      requestAnimationFrame(() => image.classList.remove('is-changing'));
+    },110);
+  }
+
+  function chooseStory(key) {
+    if (!stories[key]) return;
+    storyKey = key;
+    steps = stories[key].steps;
+    modeButtons.forEach(button => button.setAttribute('aria-pressed',String(button.dataset.tcPrototypeMode === key)));
+    renderStoryNavigation();
+    show(0);
+  }
+
+  previous.addEventListener('click', () => show(current - 1));
+  next.addEventListener('click', () => show(current + 1));
+  modeButtons.forEach(button => button.addEventListener('click', () => chooseStory(button.dataset.tcPrototypeMode)));
+  renderStoryNavigation();
+  apply(0);
+})();

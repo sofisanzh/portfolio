@@ -120,7 +120,7 @@
   function loadTexture(src){
     return new Promise((resolve,reject)=>{const image=new Image();image.onload=()=>{const texture=gl.createTexture();gl.bindTexture(gl.TEXTURE_2D,texture);gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL,true);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,image);resolve(texture);};image.onerror=reject;image.src=src;});
   }
-  const assets=['/assets/tutor-17.png','/assets/tutor-07-clean.png','/assets/tutor-20.png'];
+  const assets=['../../assets/tutor-17.png','../../assets/tutor-07-clean.png','../../assets/tutor-20.png'];
   const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let pointerX=0,pointerY=0,targetX=0,targetY=0,visible=true,animation=0,textures=[];
   scene.addEventListener('pointermove',event=>{const rect=scene.getBoundingClientRect();targetX=((event.clientX-rect.left)/rect.width-.5)*.22;targetY=((event.clientY-rect.top)/rect.height-.5)*-.14;},{passive:true});
@@ -264,7 +264,7 @@
 
   const screens = [
     {
-      src: '/assets/tutor-07-clean.png',
+      src: '../../assets/tutor-07-clean.png',
       alt: 'Calendar home screen with Book a Tutor action.',
       title: 'Start with the student’s task.',
       description: 'The calendar keeps the primary action visible: begin a tutor booking.',
@@ -273,7 +273,7 @@
       box: [10, 65, 80, 6]
     },
     {
-      src: '/assets/tutor-11.png',
+      src: '../../assets/tutor-11.png',
       alt: 'Campus, subject, and delivery method selection screen.',
       title: 'Set the context first.',
       description: 'Campus, subject, and delivery method establish what the student needs before availability appears.',
@@ -282,7 +282,7 @@
       box: [9, 63, 82, 6]
     },
     {
-      src: '/assets/tutor-14-clean.png',
+      src: '../../assets/tutor-14-clean.png',
       alt: 'Available tutoring times before a session is selected.',
       title: 'Make availability readable.',
       description: 'Available and unavailable times are separated into clear options instead of a compressed weekly table.',
@@ -291,7 +291,7 @@
       box: [52, 46, 38, 5]
     },
     {
-      src: '/assets/tutor-15.png',
+      src: '../../assets/tutor-15.png',
       alt: 'Available tutoring times with 10:00 AM selected in red.',
       title: 'Make the choice unmistakable.',
       description: 'The selected time uses a strong state change before the student continues.',
@@ -300,7 +300,7 @@
       box: [9, 73, 82, 6]
     },
     {
-      src: '/assets/tutor-16.png',
+      src: '../../assets/tutor-16.png',
       alt: 'Booking review screen with campus, subject, date, time, and delivery details.',
       title: 'Pause for review.',
       description: 'A dedicated summary lets the student verify every decision before the booking is submitted.',
@@ -309,7 +309,7 @@
       box: [9, 64, 82, 6]
     },
     {
-      src: '/assets/tutor-17.png',
+      src: '../../assets/tutor-17.png',
       alt: 'Booking confirmation screen with a Manage Bookings action.',
       title: 'Close the loop clearly.',
       description: 'Confirmation restates the session details before asking the student what they want to do next.',
@@ -318,7 +318,7 @@
       box: [9, 60, 37, 7]
     },
     {
-      src: '/assets/tutor-07-clean.png',
+      src: '../../assets/tutor-07-clean.png',
       alt: 'Calendar home screen with Manage Bookings available as a next action.',
       title: 'Return without losing the next step.',
       description: 'Finish returns the student to the familiar home screen, where existing appointments remain one clear action away.',
@@ -327,7 +327,7 @@
       box: [10, 83, 39, 9]
     },
     {
-      src: '/assets/tutor-20.png',
+      src: '../../assets/tutor-20.png',
       alt: 'Manage Bookings screen with appointment status and actions.',
       title: 'Keep every booking actionable.',
       description: 'Upcoming sessions are organized into cards with status, information, rescheduling, and cancellation controls.',

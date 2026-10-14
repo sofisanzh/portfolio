@@ -11,7 +11,7 @@
       steps: [
         {
           step: 'Task hub',
-          src: '/assets/tutor-07-clean.png',
+          src: '../../assets/tutor-07-clean.png',
           alt: 'Calendar home screen with Book a Tutor, Quick Help, and Manage Bookings actions.',
           title: 'One home for the whole task.',
           description: 'The calendar becomes the stable starting point. “Book a Tutor” carries the visual priority, while Quick Help and Manage Bookings remain available without competing with the main task.',
@@ -20,7 +20,7 @@
         },
         {
           step: 'Explain states',
-          src: '/assets/tutor-calendar-legend.png',
+          src: '../../assets/tutor-calendar-legend.png',
           alt: 'Calendar home screen with the availability key opened beside the question-mark control.',
           title: 'Explain the calendar without interrupting the task.',
           description: 'The question-mark control opens an availability key directly on the calendar. It clarifies unavailable dates and existing sessions without sending the student elsewhere or adding permanent visual clutter.',
@@ -29,7 +29,7 @@
         },
         {
           step: 'Set context',
-          src: '/assets/tutor-11.png',
+          src: '../../assets/tutor-11.png',
           alt: 'Selected Kingston campus, Mathematics subject, and in-person delivery method.',
           title: 'Define the request before showing availability.',
           description: 'Campus, subject, and delivery method establish the practical constraints first. The chosen values stay visible together, so the student can verify the request before moving forward.',
@@ -38,7 +38,7 @@
         },
         {
           step: 'Read availability',
-          src: '/assets/tutor-calendar-date.png',
+          src: '../../assets/tutor-calendar-date.png',
           alt: 'Expanded November calendar with available, unavailable, and booked date states.',
           title: 'Make availability legible at a glance.',
           description: 'The calendar keeps every date in context instead of sending the student to a separate view. Red identifies the actionable date, grey signals unavailable options, and crossed states explain existing constraints.',
@@ -47,7 +47,7 @@
         },
         {
           step: 'Confirm selection',
-          src: '/assets/tutor-15.png',
+          src: '../../assets/tutor-15.png',
           alt: 'Available tutoring times with 10:00 AM selected in red.',
           title: 'Turn a tap into an unmistakable selection.',
           description: 'The chosen time changes to red while the alternatives remain visible. This immediate state change gives the student a clear checkpoint before committing to the next step.',
@@ -56,7 +56,7 @@
         },
         {
           step: 'Review',
-          src: '/assets/tutor-16.png',
+          src: '../../assets/tutor-16.png',
           alt: 'Booking review screen showing the complete tutoring request.',
           title: 'Put every consequence on one screen.',
           description: 'Campus, subject, delivery method, date, and time are repeated in one compact summary. Targeted Change links return to the relevant decision without forcing the student to restart the flow.',
@@ -65,7 +65,7 @@
         },
         {
           step: 'Confirmation',
-          src: '/assets/tutor-17.png',
+          src: '../../assets/tutor-17.png',
           alt: 'Successful booking confirmation with Finish, Book More, and Manage Bookings actions.',
           title: 'Close the loop — then offer the next useful action.',
           description: 'The success state confirms what was booked instead of relying on a generic message. Finish, Book More, and Manage Bookings match the three most likely intentions after completion.',
@@ -74,7 +74,7 @@
         },
         {
           step: 'Manage',
-          src: '/assets/tutor-20.png',
+          src: '../../assets/tutor-20.png',
           alt: 'Manage Bookings screen with upcoming tutoring sessions and appointment actions.',
           title: 'Management belongs to the same system.',
           description: 'Upcoming sessions show tutor, subject, status, time, location, and campus before exposing Info, Reschedule, and Cancel. The card structure turns a list of appointments into clear, actionable records.',
@@ -88,7 +88,7 @@
       steps: [
         {
           step: 'Entry point',
-          src: '/assets/tutor-access-login.png',
+          src: '../../assets/tutor-access-login.png',
           alt: 'Book Tutors entry screen with sign-in fields and Quick Help.',
           title: 'Make help available before authentication.',
           description: 'Quick Help sits beside the entry path rather than behind it. A student who cannot sign in can still reach support, while the restrained screen keeps the primary access task clear.',
@@ -97,7 +97,7 @@
         },
         {
           step: 'Route the need',
-          src: '/assets/tutor-access-quick-menu.png',
+          src: '../../assets/tutor-access-quick-menu.png',
           alt: 'Quick Help panel with Contact Support, Live Chat, and FAQ options.',
           title: 'Route support by urgency and effort.',
           description: 'Contact Support, Live Chat, and FAQ separate technical assistance, immediate conversation, and self-service. Each option explains what will happen before the student chooses it.',
@@ -106,7 +106,7 @@
         },
         {
           step: 'Stay in context',
-          src: '/assets/tutor-access-live-chat.png',
+          src: '../../assets/tutor-access-live-chat.png',
           alt: 'Live Chat conversation within the tutor booking experience.',
           title: 'Resolve the problem without abandoning the task.',
           description: 'The conversation stays inside the booking experience, preserves the student’s context, and makes support availability visible. The student can return to the previous support choices at any point.',

@@ -25,9 +25,9 @@
   const phones=[...demo.querySelectorAll('.tr-phone img')];
   const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
   const states=[
-    {step:'01 / Discover',title:'Filter before the map becomes noise.',body:'Category chips turn a dense city map into a more intentional set of choices. The active filter is reinforced through colour and marker content.',images:['/assets/travel-case/map-home.webp','/assets/travel-case/map-filtered.webp']},
-    {step:'02 / Understand',title:'Reveal context in layers.',body:'A street marker becomes a compact place card before expanding into detailed information. Orientation is preserved while the user decides whether to go deeper.',images:['/assets/travel-case/ar-discovery.webp','/assets/travel-case/ar-place-preview.webp']},
-    {step:'03 / Navigate',title:'Choose context or overview.',body:'The same destination can continue into camera guidance or a familiar map route. Distance and place context remain visible across the handoff.',images:['/assets/travel-case/navigation-choice.webp','/assets/travel-case/ar-route.webp']}
+    {step:'01 / Discover',title:'Filter before the map becomes noise.',body:'Category chips turn a dense city map into a more intentional set of choices. The active filter is reinforced through colour and marker content.',images:['../../assets/travel-case/map-home.webp','../../assets/travel-case/map-filtered.webp']},
+    {step:'02 / Understand',title:'Reveal context in layers.',body:'A street marker becomes a compact place card before expanding into detailed information. Orientation is preserved while the user decides whether to go deeper.',images:['../../assets/travel-case/ar-discovery.webp','../../assets/travel-case/ar-place-preview.webp']},
+    {step:'03 / Navigate',title:'Choose context or overview.',body:'The same destination can continue into camera guidance or a familiar map route. Distance and place context remain visible across the handoff.',images:['../../assets/travel-case/navigation-choice.webp','../../assets/travel-case/ar-route.webp']}
   ];
   let active=0,timer;
   function show(index,manual=false){

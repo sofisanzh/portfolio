@@ -30,27 +30,27 @@
   const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const states = [
     {step:'01 / PREPARE', title:'Put essential information within one reach.', body:'Quick actions, emergency contacts, medical ID, offline maps, and device tools are grouped by the job they support—not by technical ownership.', bullets:['Persistent emergency action','Editable quick access','Offline-aware settings'], frames:[
-      ['Home overview','/assets/safe-case-v3/phone-home.webp'],
-      ['Medical ID','/assets/safe-case-v3/phone-medical.webp'],
-      ['Settings','/assets/safe-case-v3/phone-settings.webp'],
-      ['Device tools','/assets/safe-case-v3/phone-tools.webp'],
-      ['AI assistant','/assets/safe-case-v3/phone-ai-chat.webp']
+      ['Home overview','../../assets/safe-case-v3/phone-home.webp'],
+      ['Medical ID','../../assets/safe-case-v3/phone-medical.webp'],
+      ['Settings','../../assets/safe-case-v3/phone-settings.webp'],
+      ['Device tools','../../assets/safe-case-v3/phone-tools.webp'],
+      ['AI assistant','../../assets/safe-case-v3/phone-ai-chat.webp']
     ]},
     {step:'02 / RESPOND', title:'Show what is happening right now.', body:'The emergency state separates calling, alerting contacts, and sharing location so progress is visible instead of hidden behind one generic confirmation.', bullets:['Hold-to-activate protection','Separate service status','Route remains available'], frames:[
-      ['Emergency actions','/assets/safe-case-v3/phone-sos.webp'],
-      ['SOS active','/assets/safe-case-v3/phone-sos-active.webp'],
-      ['Call options','/assets/safe-case-v3/phone-call.webp'],
-      ['Offline message','/assets/safe-case-v3/phone-call-message.webp'],
-      ['Risk map','/assets/safe-case-v3/phone-map-overview.webp'],
-      ['Destination detail','/assets/safe-case-v3/phone-map-destination.webp']
+      ['Emergency actions','../../assets/safe-case-v3/phone-sos.webp'],
+      ['SOS active','../../assets/safe-case-v3/phone-sos-active.webp'],
+      ['Call options','../../assets/safe-case-v3/phone-call.webp'],
+      ['Offline message','../../assets/safe-case-v3/phone-call-message.webp'],
+      ['Risk map','../../assets/safe-case-v3/phone-map-overview.webp'],
+      ['Destination detail','../../assets/safe-case-v3/phone-map-destination.webp']
     ]},
     {step:'03 / LEARN', title:'Turn guidance into something usable.', body:'First-aid instructions, visual topics, and short practice scenarios make preparedness part of the same product rather than a disconnected content library.', bullets:['Action-first instructions','Video and text modes','Short scenario practice'], frames:[
-      ['Preparedness library','/assets/safe-case-v3/phone-learn-library.webp'],
-      ['Guide collection','/assets/safe-case-v3/phone-map-guides.webp'],
-      ['Action steps','/assets/safe-case-v3/phone-learn-steps.webp'],
-      ['Video mode','/assets/safe-case-v3/phone-learn-video.webp'],
-      ['Practice library','/assets/safe-case-v3/phone-game-library.webp'],
-      ['Scenario detail','/assets/safe-case-v3/phone-game-detail.webp']
+      ['Preparedness library','../../assets/safe-case-v3/phone-learn-library.webp'],
+      ['Guide collection','../../assets/safe-case-v3/phone-map-guides.webp'],
+      ['Action steps','../../assets/safe-case-v3/phone-learn-steps.webp'],
+      ['Video mode','../../assets/safe-case-v3/phone-learn-video.webp'],
+      ['Practice library','../../assets/safe-case-v3/phone-game-library.webp'],
+      ['Scenario detail','../../assets/safe-case-v3/phone-game-detail.webp']
     ]}
   ];
   let active = 0, frameIndex = 0, timer;
